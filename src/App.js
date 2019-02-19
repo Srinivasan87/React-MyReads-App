@@ -11,6 +11,8 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
 
+          {/* Added <Route> tag to match browser URL & load UI */}
+          {/*Added history props for search books component to enable Back button/ Close button functionality*/}
           <Route exact path="/search" render={({ history }) => (
           <div className="search-books">
             <div className="search-books-bar">
@@ -34,6 +36,7 @@ class BooksApp extends React.Component {
           </div>
           )} />
 
+          {/* Added <Route> tag to match browser URL & load UI */}
           <Route exact path="/" render={() => (
           <div className="list-books">
             <div className="list-books-title">
@@ -191,6 +194,7 @@ class BooksApp extends React.Component {
               </div>
             </div>
             <div className="open-search">
+              {/*Added Link tag to navigate to Search Book page. */}
               <Link to='/search' onClick={() => ({}) }>Add a book</Link>
             </div>
           </div>
