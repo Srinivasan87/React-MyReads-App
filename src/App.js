@@ -6,7 +6,17 @@ import ListBooks from './components/ListBooks'
 import SearchBooks from './components/SearchBooks'
 
 class BooksApp extends React.Component {
-  state = {  }
+  state = { MyBooks:[] }
+
+  componentDidMount(){
+    this.GetBookData()
+  }
+
+  GetBookData = () => {
+    BooksAPI.getAll().then((books)=>{
+      this.setState({MyBooks:books})
+    })
+  }
 
   render() {
     return (
