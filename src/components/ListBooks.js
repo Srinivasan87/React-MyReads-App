@@ -20,7 +20,7 @@ class ListBooks extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <BookShelfs Shelfs={MyShelfs} />
+                <BookShelfs Shelfs={MyShelfs} MyBooks={this.props.MyBooks} />
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
