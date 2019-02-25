@@ -6,8 +6,10 @@ import ListBooks from './components/ListBooks'
 import SearchBooks from './components/SearchBooks'
 
 class BooksApp extends React.Component {
+  
   state = { MyBooks:[] }
 
+  //Mounted data call on ComponentDidMount()
   componentDidMount(){
     this.GetBookData()
   }
