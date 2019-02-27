@@ -13,9 +13,9 @@ class ListBooks extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <BookShelfs Shelfs={"Currently Reading"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "currentlyReading"))} />
-                <BookShelfs Shelfs={"Read"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "read"))} />
-                <BookShelfs Shelfs={"Want to Read"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "wantToRead"))} />
+                <BookShelfs ShelfChange={this.props.ShelfChange} Shelfs={"Currently Reading"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "currentlyReading"))} />
+                <BookShelfs ShelfChange={this.props.ShelfChange} Shelfs={"Read"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "read"))} />
+                <BookShelfs ShelfChange={this.props.ShelfChange} Shelfs={"Want to Read"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "wantToRead"))} />
              </div>
             </div>
             <div className="open-search">
