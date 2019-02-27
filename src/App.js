@@ -7,7 +7,7 @@ import SearchBooks from './components/SearchBooks'
 
 class BooksApp extends React.Component {
   
-  state = { MyBooks:[] }
+  state = { MyBooks:[],LibraryBooks:[] }
 
   //Mounted data call on ComponentDidMount()
   componentDidMount(){
@@ -27,6 +27,11 @@ class BooksApp extends React.Component {
     })
   }
 
+  FindBook = (query) => {
+    BooksAPI.search(query).then((books)=>{
+      this.setState({LibraryBooks:books})
+    })
+  }
 
   render() {
     return (
@@ -34,7 +39,7 @@ class BooksApp extends React.Component {
 
           {/* Added <Route> tag to match browser URL & load UI */}
           {/*Added history props for search books component to enable Back button/ Close button functionality*/}
-          <Route exact path="/search" render={() => ( <SearchBooks /> )} />
+          <Route exact path="/search" render={() => ( <SearchBooks ShelfChange={this.UpdateBookData} FindBook={this.FindBook} SearchBooks={this.state.LibraryBooks} /> )} />
 
           {/* Added <Route> tag to match browser URL & load UI */}
           <Route exact path="/" render={() => ( <ListBooks ShelfChange={this.UpdateBookData} MyBooks={this.state.MyBooks}/>)} />
