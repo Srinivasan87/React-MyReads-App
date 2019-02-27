@@ -7,6 +7,7 @@ import SearchBooks from './components/SearchBooks'
 
 class BooksApp extends React.Component {
   
+  //State Where data lives
   state = { MyBooks:[],LibraryBooks:[] }
 
   //Mounted data call on ComponentDidMount()
@@ -14,12 +15,14 @@ class BooksApp extends React.Component {
     this.GetBookData()
   }
 
+  //Function which gets all book data
   GetBookData = () => {
     BooksAPI.getAll().then((books)=>{
       this.setState({MyBooks:books})
     })
   }
 
+  //Function which updates book data
   UpdateBookData = (book,shelf) => {
     BooksAPI.update(book,shelf).then(response =>{
       book.shelf=shelf
@@ -27,6 +30,7 @@ class BooksApp extends React.Component {
     })
   }
 
+  //Function which search book data
   FindBook = (query) => {
     BooksAPI.search(query).then((books)=>{
       this.setState({LibraryBooks:books})
