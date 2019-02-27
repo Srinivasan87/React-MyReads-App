@@ -7,7 +7,7 @@ function BookShelfs(props) {
         <div className="bookshelf">
             <h2 className="bookshelf-title">{props.Shelfs}</h2>
             <div className="bookshelf-books">
-                <Books Books={props.MyBooks} />
+                <Books ShelfChange={props.ShelfChange} Books={props.MyBooks} />
             </div>
         </div>
     )
