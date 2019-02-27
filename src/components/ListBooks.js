@@ -3,19 +3,17 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import BookShelfs from './BookShelfs';
 
-class ListBooks extends React.Component {
-    render() {
+function ListBooks (props) {
         return (
-
             <div className="list-books">
             <div className="list-books-title">
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
               <div>
-                <BookShelfs ShelfChange={this.props.ShelfChange} Shelfs={"Currently Reading"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "currentlyReading"))} />
-                <BookShelfs ShelfChange={this.props.ShelfChange} Shelfs={"Read"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "read"))} />
-                <BookShelfs ShelfChange={this.props.ShelfChange} Shelfs={"Want to Read"} MyBooks={this.props.MyBooks.filter((book) => (book.shelf === "wantToRead"))} />
+                <BookShelfs ShelfChange={props.ShelfChange} Shelfs={"Currently Reading"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "currentlyReading"))} />
+                <BookShelfs ShelfChange={props.ShelfChange} Shelfs={"Read"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "read"))} />
+                <BookShelfs ShelfChange={props.ShelfChange} Shelfs={"Want to Read"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "wantToRead"))} />
              </div>
             </div>
             <div className="open-search">
@@ -25,7 +23,5 @@ class ListBooks extends React.Component {
           </div>
         )
     }    
-
-}
 
 export default ListBooks
