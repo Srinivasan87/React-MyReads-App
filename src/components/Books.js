@@ -5,7 +5,7 @@ function Books(props) {
     return (
         <ol className="books-grid">
             {props.Books.map((book) => (
-                <li id={book.id}>
+                <li key={book.id}>
                     <div className="book">
                         <div className="book-top">
                             <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${book.imageLinks.thumbnail}")` }}></div>
