@@ -20,6 +20,14 @@ class BooksApp extends React.Component {
     })
   }
 
+  UpdateBookData = (book,shelf) => {
+    BooksAPI.update(book,shelf).then(response =>{
+      book.shelf=shelf
+      this.GetBookData()
+    })
+  }
+
+
   render() {
     return (
       <div className="app">
@@ -29,7 +37,7 @@ class BooksApp extends React.Component {
           <Route exact path="/search" render={() => ( <SearchBooks /> )} />
 
           {/* Added <Route> tag to match browser URL & load UI */}
-          <Route exact path="/" render={() => ( <ListBooks MyBooks={this.state.MyBooks}/>)} />
+          <Route exact path="/" render={() => ( <ListBooks ShelfChange={this.UpdateBookData} MyBooks={this.state.MyBooks}/>)} />
           
       </div>
     )
