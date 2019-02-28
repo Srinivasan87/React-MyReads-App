@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import BookShelfs from './BookShelfs';
+import propTypes from 'prop-types';
 
 function ListBooks (props) {
         return (
@@ -23,5 +24,11 @@ function ListBooks (props) {
           </div>
         )
     }    
+
+  
+  ListBooks.propTypes = {
+    ShelfChange: propTypes.func.isRequired,
+    MyBooks: propTypes.array.isRequired,
+}
 
 export default ListBooks

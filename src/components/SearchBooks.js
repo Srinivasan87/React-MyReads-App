@@ -1,7 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import '../App.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
 import Books from './Books';
+import propTypes from 'prop-types';
 
 function SearchBooks (props) {
         return (
@@ -17,5 +18,11 @@ function SearchBooks (props) {
                 </div>
             </div>
         )
+    }
+
+    SearchBooks.propTypes = {
+        ShelfChange: propTypes.func.isRequired,
+        FindBook: propTypes.func.isRequired,
+        SearchBooks: propTypes.array.isRequired,
     }
 export default SearchBooks
