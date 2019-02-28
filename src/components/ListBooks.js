@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
-import BookShelfs from './BookShelfs';
+import bookShelfs from './BookShelfs';
 import propTypes from 'prop-types';
 
-function ListBooks(props) {
+function listBooks(props) {
   return (
     <div className="list-books">
       <div className="list-books-title">
@@ -12,9 +12,9 @@ function ListBooks(props) {
       </div>
       <div className="list-books-content">
         <div>
-          <BookShelfs ShelfChange={props.ShelfChange} Shelfs={"Currently Reading"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "currentlyReading"))} />
-          <BookShelfs ShelfChange={props.ShelfChange} Shelfs={"Read"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "read"))} />
-          <BookShelfs ShelfChange={props.ShelfChange} Shelfs={"Want to Read"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "wantToRead"))} />
+          <bookShelfs ShelfChange={props.ShelfChange} Shelfs={"Currently Reading"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "currentlyReading"))} />
+          <bookShelfs ShelfChange={props.ShelfChange} Shelfs={"Read"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "read"))} />
+          <bookShelfs ShelfChange={props.ShelfChange} Shelfs={"Want to Read"} MyBooks={props.MyBooks.filter((book) => (book.shelf === "wantToRead"))} />
         </div>
       </div>
       <div className="open-search">
@@ -26,9 +26,9 @@ function ListBooks(props) {
 }
 
 
-ListBooks.propTypes = {
+listBooks.propTypes = {
   ShelfChange: propTypes.func.isRequired,
   MyBooks: propTypes.array.isRequired,
 }
 
-export default ListBooks
+export default listBooks

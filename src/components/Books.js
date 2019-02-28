@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import '../App.css';
 import propTypes from 'prop-types';
 
-function Books(props) {
+function books(props) {
     return (
         <ol className="books-grid">
             {props.Books.map((book) => (
@@ -29,9 +29,9 @@ function Books(props) {
     )
 }
 
-Books.propTypes = {
+books.propTypes = {
     ShelfChange: propTypes.func.isRequired,
     Books: propTypes.array.isRequired,
 }
 
-export default Books
+export default books
