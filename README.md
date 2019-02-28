@@ -4,7 +4,7 @@
 MyReads app allows the user to manage a Book library, like Finding books,Adding books to current library,Categories books as per shelfs and Remove books.
 
 ## Demo
-![Gif](https://github.com/Srinivasan87/React-Contacts-App/blob/master/Contacts.gif)
+![Gif](https://github.com/Srinivasan87/React-MyReads-App/blob/master/MyReads.gif)
 
 ## Getting Started
 
