@@ -14,7 +14,9 @@ function SearchBooks (props) {
                     </div>
                 </div>
                 <div className="search-books-results">
-                    <Books ShelfChange={props.ShelfChange} Books={props.SearchBooks} />
+                {
+                    props.SearchBooks.length === 0 ? "No Data Found": <Books ShelfChange={props.ShelfChange} Books={props.SearchBooks} /> 
+                }
                 </div>
             </div>
         )
