@@ -63,12 +63,11 @@ class BooksApp extends React.Component {
       <div className="app">
 
         {/* Added <Route> tag to match browser URL & load UI */}
-        {/*Added history props for search books component to enable Back button/ Close button functionality*/}
         <Route exact path="/search" render={() => (<SearchBooks ShelfChange={this.UpdateBookData} FindBook={this.FindBook} SearchBooks={this.state.LibraryBooks} />)} />
 
         {/* Added <Route> tag to match browser URL & load UI */}
         <Route exact path="/" render={() => (<ListBooks ShelfChange={this.UpdateBookData} MyBooks={this.state.MyBooks} />)} />
-
+        
       </div>
     )
   }
