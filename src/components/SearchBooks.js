@@ -4,7 +4,7 @@ import '../App.css';
 import Books from './Books';
 import propTypes from 'prop-types';
 
-function searchBooks(props) {
+function SearchBooks(props) {
     return (
         <div className="search-books">
             <div className="search-books-bar">
@@ -22,9 +22,9 @@ function searchBooks(props) {
     )
 }
 
-searchBooks.propTypes = {
+SearchBooks.propTypes = {
     ShelfChange: propTypes.func.isRequired,
     FindBook: propTypes.func.isRequired,
     SearchBooks: propTypes.array.isRequired,
 }
-export default searchBooks
+export default SearchBooks

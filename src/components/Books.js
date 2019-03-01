@@ -2,14 +2,17 @@ import React from 'react';
 import '../App.css';
 import propTypes from 'prop-types';
 
-function books(props) {
+function Books(props) {
     return (
         <ol className="books-grid">
             {props.Books.map((book) => (
                 <li key={book.id}>
                     <div className="book">
                         <div className="book-top">
+                            { book.imageLinks && book.imageLinks.thumbnail ? 
                             <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${book.imageLinks.thumbnail}")` }}></div>
+                               : <div className="book-cover" ></div>}
+                            
                             <div className="book-shelf-changer">
                                 <select value={book.shelf} onChange={(event) => props.ShelfChange(book, event.target.value)}>
                                     <option value="move" disabled>Move to...</option>
@@ -29,9 +32,9 @@ function books(props) {
     )
 }
 
-books.propTypes = {
+Books.propTypes = {
     ShelfChange: propTypes.func.isRequired,
     Books: propTypes.array.isRequired,
 }
 
-export default books
+export default Books

@@ -2,10 +2,10 @@ import React from 'react';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 import { Route } from 'react-router-dom';
-import listBooks from './components/ListBooks';
-import searchBooks from './components/SearchBooks';
+import ListBooks from './components/ListBooks';
+import SearchBooks from './components/SearchBooks';
 
-class booksApp extends React.Component {
+class BooksApp extends React.Component {
 
   /** 
    * @description Component State Where data lives
@@ -64,14 +64,14 @@ class booksApp extends React.Component {
 
         {/* Added <Route> tag to match browser URL & load UI */}
         {/*Added history props for search books component to enable Back button/ Close button functionality*/}
-        <Route exact path="/search" render={() => (<searchBooks ShelfChange={this.UpdateBookData} FindBook={this.FindBook} SearchBooks={this.state.LibraryBooks} />)} />
+        <Route exact path="/search" render={() => (<SearchBooks ShelfChange={this.UpdateBookData} FindBook={this.FindBook} SearchBooks={this.state.LibraryBooks} />)} />
 
         {/* Added <Route> tag to match browser URL & load UI */}
-        <Route exact path="/" render={() => (<listBooks ShelfChange={this.UpdateBookData} MyBooks={this.state.MyBooks} />)} />
+        <Route exact path="/" render={() => (<ListBooks ShelfChange={this.UpdateBookData} MyBooks={this.state.MyBooks} />)} />
 
       </div>
     )
   }
 }
 
-export default booksApp
+export default BooksApp
