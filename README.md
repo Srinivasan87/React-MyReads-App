@@ -1,7 +1,7 @@
 [![REACT nanodegree](https://img.shields.io/badge/udacity-REACTND-02b3e4.svg?style=flat)](https://www.udacity.com/course/react-nanodegree--nd019)
 # React-MyReads-App
 
-MyReads app allows the user to manage a Book library, like Finding books,Adding books to shelfs,Categories & move books around shelfs and Remove books from shelfs.
+MyReads app allows the user to manage a book library, like Finding books,Adding books to shelfs,Categories or move books around shelfs and Remove books from shelfs.
 
 ## Demo
 ![Gif](https://github.com/Srinivasan87/React-MyReads-App/blob/master/MyReads.gif)
