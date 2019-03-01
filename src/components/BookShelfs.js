@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import '../App.css';
 import Books from './Books';
 import propTypes from 'prop-types';
