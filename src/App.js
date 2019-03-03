@@ -28,7 +28,7 @@ class BooksApp extends React.Component {
   */
   GetBookData = () => {
     BooksAPI.getAll().then((books) => {
-      this.setState({ MyBooks: books })
+      this.setState({ MyBooks: books, LibraryBooks: [] })
     });
   }
 
@@ -53,7 +53,9 @@ class BooksApp extends React.Component {
   FindBook = (query) => {
     query === "" ? (this.setState({ LibraryBooks: [] })) //Empty Query
     : BooksAPI.search(query).then((books) => {
-        books.error === "empty query" ? this.setState({ LibraryBooks: [] }) : this.setState({ LibraryBooks: books });
+      books.map((lb) => lb.shelf="none" ) 
+      books.map((lb) => this.state.MyBooks.map((b) => lb.id===b.id && (lb.shelf=b.shelf)  ))
+      books.error === "empty query" ? this.setState({ LibraryBooks: [] }) : this.setState({ LibraryBooks: books });
       })
   }
 
