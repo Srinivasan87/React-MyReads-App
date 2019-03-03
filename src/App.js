@@ -51,7 +51,7 @@ class BooksApp extends React.Component {
    * @returns List of books as per query
   */
   FindBook = (query) => {
-    query === "" ? (this.setState({ LibraryBooks: [] })) 
+    query === "" ? (this.setState({ LibraryBooks: [] })) //Empty Query
     : BooksAPI.search(query).then((books) => {
         books.error === "empty query" ? this.setState({ LibraryBooks: [] }) : this.setState({ LibraryBooks: books });
       })
