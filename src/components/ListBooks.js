@@ -19,7 +19,7 @@ function ListBooks(props) {
       </div>
       <div className="open-search">
         {/*Added Link tag to navigate to Search Book page. */}
-        <Link to='/search' onClick={() => ({})}>Add a book</Link>
+        <Link to='/search' onClick={props.resetlib.bind(this)}>Add a book</Link>
       </div>
     </div>
   )

@@ -22,6 +22,10 @@ class BooksApp extends React.Component {
     this.GetBookData();
   }
 
+  resetlib = (event) => {
+    this.setState({ LibraryBooks: [] });
+  }
+
   /** 
    * @description Function which gets all book data from BooksAPI
    * @returns List of Books
@@ -31,7 +35,7 @@ class BooksApp extends React.Component {
       this.setState({ MyBooks: books })
     });
   }
-
+ 
   /** 
    * @description Function which updates book data through BooksAPI
    * @param {string} book - Book whos shelf has been changed
@@ -52,8 +56,15 @@ class BooksApp extends React.Component {
   */
   FindBook = (query) => {
     query === "" ? (this.setState({ LibraryBooks: [] })) //Empty Query
-    : BooksAPI.search(query).then((books) => {
-        books.error === "empty query" ? this.setState({ LibraryBooks: [] }) : this.setState({ LibraryBooks: books });
+      : BooksAPI.search(query).then((books) => {
+        if (books.error === "empty query") {
+          this.setState({ LibraryBooks: [] })
+        }
+        else {
+          books.map((lb) => lb.shelf = "none")
+          books.map((lb) => this.state.MyBooks.map((b) => lb.id === b.id && (lb.shelf = b.shelf)))
+          this.setState({ LibraryBooks: books })
+        }
       })
   }
 
@@ -65,7 +76,7 @@ class BooksApp extends React.Component {
         <Route exact path="/search" render={() => (<SearchBooks ShelfChange={this.UpdateBookData} FindBook={this.FindBook} SearchBooks={this.state.LibraryBooks} />)} />
 
         {/* Added <Route> tag to match browser URL & load UI */}
-        <Route exact path="/" render={() => (<ListBooks ShelfChange={this.UpdateBookData} MyBooks={this.state.MyBooks} />)} />
+        <Route exact path="/" render={() => (<ListBooks resetlib={this.resetlib} ShelfChange={this.UpdateBookData} MyBooks={this.state.MyBooks} />)} />
         
       </div>
     )

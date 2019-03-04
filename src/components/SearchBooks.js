@@ -8,7 +8,7 @@ function SearchBooks(props) {
     return (
         <div className="search-books">
             <div className="search-books-bar">
-                <Link to="/" onClick={()=> {props.SearchBooks=[]}} className="close-search">Close</Link>
+                <Link to="/" className="close-search">Close</Link>
                 <div className="search-books-input-wrapper">
                     <input type="text" placeholder="Search by title or author" onChange={(event) => props.FindBook(event.target.value)} />
                 </div>
